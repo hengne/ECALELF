@@ -3,7 +3,6 @@ source $CMSSW_BASE/src/Calibration/ALCARAW_RECO/scripts/prodFunctions.sh
 
 ############################### OPTIONS
 #------------------------------ default
-SKIM=none
 USEPARENT=0
 SCHEDULER=caf
 USESERVER=1
@@ -288,7 +287,6 @@ EOF
 
 cat >> ${crabFile} <<EOF
 thresholdLevel=80
-eMail = shervin@cern.ch
 
 [GRID]
 rb = HC
