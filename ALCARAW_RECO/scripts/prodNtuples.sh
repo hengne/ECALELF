@@ -338,9 +338,11 @@ use_parent=0
 
 
 [LSF]
-queue = 1nh
+queue = 1nd
+resource = type==SLC5_64
 [CAF]
 queue = cmscaf1nd
+resource = type==SLC5_64
 
 
 [USER]
