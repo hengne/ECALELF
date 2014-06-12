@@ -723,6 +723,7 @@ process.eleRegressionEnergy.inputElectronsTag = myEleCollection
 process.patElectrons.electronSource = myEleCollection
 process.eleSelectionProducers.electronCollection = myEleCollection
 process.PassingHLT.InputProducer = myEleCollection
+process.electronMatch.src = myEleCollection
 process.selectedElectrons.src = myEleCollection
 process.PassingVeryLooseId.src = myEleCollection
 process.PassingMediumId.src = myEleCollection
