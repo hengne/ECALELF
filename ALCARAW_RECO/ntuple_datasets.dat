@@ -259,3 +259,4 @@ allRange	/SingleElectronFlatPt10To300_pythia6/Summer12_DR53X-PU_S10_START53_V7A-
 190645-193621	/DoubleElectron/Run2012A-22Jan2013-v1/AOD	DoubleElectron-ZSkim-RUN2012A-22Jan-v1	caf.cern.ch	group/alca_ecalcalib/ecalelf/heli/ntuples	ALCARECO		190456-208686_22JanReReco_v1
 193834-196531	/DoubleElectron/Run2012B-22Jan2013-v1/AOD	DoubleElectron-ZSkim-RUN2012B-22Jan-v1	caf.cern.ch	group/alca_ecalcalib/ecalelf/heli/ntuples	ALCARECO		190456-208686_22JanReReco_v1
 203777-208686	/DoubleElectron/Run2012D-22Jan2013-v1/AOD	DoubleElectron-ZSkim-RUN2012D-22Jan-v1	caf.cern.ch	group/alca_ecalcalib/ecalelf/heli/ntuples	ALCARECO		190456-208686_22JanReReco_v1
+allRange	/DYJetsToLL_M-50_TuneZ2Star_8TeV-madgraph-tarball/Summer12_DR53X-PU_RD1_START53_V7N-v1/AODSIM	DYJets-Summer12-START53-ZSkim-runDependent-allRange-v2	caf.cern.ch	group/alca_ecalcalib/ecalelf/heli/ntuples	ALCARECOSIM		
