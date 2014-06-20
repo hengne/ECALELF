@@ -375,6 +375,12 @@ if [ -n "${CREATE}" ];then
     splittedOutputFilesCrabPatch.sh -u $UI_WORKING_DIR
 fi
 
+#clean up extral lines, otherwise you will lose some Ntuple (added by Hengne)
+awk ' /file_list=\"\"/ &&c++>0 {next} 1 ' ${UI_WORKING_DIR}/job/CMSSW.sh > _tmp_CMSSW.sh
+chmod +x _tmp_CMSSW.sh
+mv _tmp_CMSSW.sh ${UI_WORKING_DIR}/job/CMSSW.sh
+
+
 if [ -n "$SUBMIT" -a -z "${CHECK}" ];then
     crab -c ${UI_WORKING_DIR} -submit
     STRING="${RUNRANGE}\t${DATASETPATH}\t${DATASETNAME}\t${STORAGE_ELEMENT}\t${USER_REMOTE_DIR_BASE}\t${TYPE}\t${TAG}\t${JSONNAME}"
