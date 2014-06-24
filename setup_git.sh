@@ -55,7 +55,7 @@ echo "[STATUS] Download ECALELF directory"
 myDir=Calibration
 if [ ! -d "$myDir" ];then
     if [ "$USER" != "shervin" ];then
-	git clone https://github.com/ECALELFS/ECALELF $myDir >> setup.log || exit 1 # read-only mode
+	git clone https://github.com/hengne/ECALELF $myDir >> setup.log || exit 1 # read-only mode
     else
 	git clone git@github.com:ECALELFS/ECALELF.git $myDir  >> setup.log || exit 1 # read-only mode
     fi
@@ -65,7 +65,7 @@ cd $myDir/ALCARAW_RECO/
 
 ### if you are not Shervin download this to have some useful scripts
 if [ "$USER" != "shervin" ];then
-    git clone https://github.com/ECALELFS/Utilities.git bin
+    git clone https://github.com/hengne/Utilities.git bin
 fi
 
 #cd EgammaAnalysis/ElectronTools/data/
@@ -144,7 +144,7 @@ case $CMSSW_VERSION in
     if [ "`grep -c getEcalEBRecHitCollection $CMSSW_BASE/src/RecoEcal/EgammaCoreTools/interface/EcalClusterLazyTools.h`" == "0" ];then
 	patch  -p0 < $myDir/ALCARAW_RECO/test/clusterLazyTools.patch >> setup.log || exit 1
     fi
-    patch  -p0 < $myDir/ALCARAW_RECO/test/class_def.xml.patch >> setup.log || exit 1
+    #patch  -p0 < $myDir/ALCARAW_RECO/test/class_def.xml.patch >> setup.log || exit 1
 
 	cp /afs/cern.ch/user/b/bendavid/cmspublic/regweights52xV3/*.root $myDir/EleNewEnergiesProducer/data/ >> setup.log || exit 1
 
@@ -166,8 +166,8 @@ case $CMSSW_VERSION in
 ###### New Josh regression
 	mkdir HiggsAnalysis/
 	cd HiggsAnalysis/
-	git clone -b legacyCompatibility https://github.com/bendavid/GBRLikelihood.git 
-	git clone -b hggpaperV6 https://github.com/bendavid/GBRLikelihoodEGTools.git
+	git clone https://github.com/bendavid/GBRLikelihood.git 
+	git clone https://github.com/bendavid/GBRLikelihoodEGTools.git
 	cd -
 	mv GBRLikelihoodEGTools/data/*.root $myDir/EleNewEnergiesProducer/data/
 

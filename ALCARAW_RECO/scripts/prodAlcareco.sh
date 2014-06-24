@@ -3,13 +3,12 @@ source $CMSSW_BASE/src/Calibration/ALCARAW_RECO/scripts/prodFunctions.sh
 
 ############################### OPTIONS
 #------------------------------ default
-SKIM=none
 USEPARENT=0
 SCHEDULER=caf
 USESERVER=1
 TYPE=ALCARECO
 LUMIS_PER_JOBS=200  # 4000 for ZSkim events is good, WSkim events /=4, SingleElectron /=10
-EVENTS_PER_JOB=40000
+EVENTS_PER_JOB=100000
 BLACKLIST=T2_EE_Estonia
 CREATE=yes
 SUBMIT=yes
@@ -288,7 +287,6 @@ EOF
 
 cat >> ${crabFile} <<EOF
 thresholdLevel=80
-eMail = shervin@cern.ch
 
 [GRID]
 rb = HC

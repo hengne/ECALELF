@@ -296,7 +296,7 @@ else:
 process.pfIsoEgamma = cms.Sequence()
 if((options.type=='ALCARECO' or options.type=='ALCARECOSIM') and not re.match("CMSSW_7_.*_.*",CMSSW_VERSION)):
     from CommonTools.ParticleFlow.Tools.pfIsolation import setupPFElectronIso, setupPFMuonIso
-    process.eleIsoSequence = setupPFElectronIso(process, 'gsfGsfElectrons', 'PFIso')
+    process.eleIsoSequence = setupPFElectronIso(process, 'gsfElectrons', 'PFIso')
     process.pfIsoEgamma *= (process.pfParticleSelectionSequence + process.eleIsoSequence)
 elif((options.type=='ALCARECO' or options.type=='ALCARECOSIM') and re.match("CMSSW_7_.*_.*",CMSSW_VERSION)):
     process.pfisoALCARECO = cms.Sequence() # remove any modules
@@ -743,7 +743,12 @@ process.PassingHLT.InputProducer = myEleCollection
 process.eleRegressionEnergy.inputElectronsTag = myEleCollection
 process.patElectrons.electronSource = myEleCollection
 process.eleSelectionProducers.electronCollection = myEleCollection
+process.PassingHLT.InputProducer = myEleCollection
 process.electronMatch.src = myEleCollection
+process.selectedElectrons.src = myEleCollection
+process.PassingVeryLooseId.src = myEleCollection
+process.PassingMediumId.src = myEleCollection
+process.PassingTightId.src = myEleCollection
 process.eleNewEnergiesProducer.electronCollection = myEleCollection
 process.alCaIsolatedElectrons.electronLabel = myEleCollection 
 process.alcaElectronTracksReducer.electronLabel = myEleCollection

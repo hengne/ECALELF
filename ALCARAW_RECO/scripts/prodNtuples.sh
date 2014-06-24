@@ -348,7 +348,8 @@ use_parent=0
 
 
 [LSF]
-queue = 1nh
+queue = 1nd
+resource = type==SLC5_64
 [CAF]
 queue = cmscaf1nd
 resource = type==SLC5_64
@@ -382,6 +383,12 @@ if [ -n "${CREATE}" ];then
     fi
     splittedOutputFilesCrabPatch.sh -u $UI_WORKING_DIR
 fi
+
+#clean up extral lines, otherwise you will lose some Ntuple (added by Hengne)
+awk ' /file_list=\"\"/ &&c++>0 {next} 1 ' ${UI_WORKING_DIR}/job/CMSSW.sh > _tmp_CMSSW.sh
+chmod +x _tmp_CMSSW.sh
+mv _tmp_CMSSW.sh ${UI_WORKING_DIR}/job/CMSSW.sh
+
 
 if [ -n "$SUBMIT" -a -z "${CHECK}" ];then
     crab -c ${UI_WORKING_DIR} -submit

@@ -927,7 +927,7 @@ void ZNtupleDumper::InitNewTree(){
   tree->Branch("runNumber",     &runNumber,     "runNumber/I");
   tree->Branch("eventNumber",   &eventNumber, "eventNumber/l");
   tree->Branch("lumiBlock",     &lumiBlock,     "lumiBlock/I");
-  tree->Branch("runTime",       &runTime,         "runTime/i");
+  tree->Branch("runTime",       &runTime,         "runTime/l");
   
   tree->Branch("mcGenWeight",   &mcGenWeight, "mcGenWeight/F");
 
